@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fae9e0">
+  <meta name="description" content="A little universe, made with love. A birthday surprise just for you.">
+  <title>For you, always ♡ — Happy Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#welcome">Skip to the birthday surprise</a>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="sky sky--day"></div><div class="sky sky--sunset"></div><div class="sky sky--night"></div>
+    <div class="sky-orb sun-orb"></div><div id="star-field" class="star-field"></div>
+    <div class="sky-grain"></div>
+  </div>
+  <div id="petal-layer" class="petal-layer" aria-hidden="true"></div>
+  <div id="burst-layer" class="burst-layer" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a href="#welcome" class="brand" aria-label="Back to the beginning"><span class="brand-symbol">✿</span><span data-t="brand">little universe</span><span class="brand-heart">♡</span></a>
+    <div class="header-actions">
+      <span class="header-for" data-t="headerFor">made with all my love</span>
+      <div class="lang-switch" role="group" aria-label="Language / Idioma">
+        <button class="lang-btn is-active" id="lang-en" data-lang="en" type="button" aria-pressed="true">EN</button>
+        <button class="lang-btn" id="lang-es" data-lang="es" type="button" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </header>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+  <nav class="chapter-nav" aria-label="Chapters">
+    <a class="chapter-nav__item active" href="#welcome" data-nav="day"><span class="chapter-nav__dot"></span><span data-t="navDay">daylight</span></a>
+    <a class="chapter-nav__item" href="#sunset-secret" data-nav="sunset"><span class="chapter-nav__dot"></span><span data-t="navSunset">golden hour</span></a>
+    <a class="chapter-nav__item" href="#moonlight" data-nav="night"><span class="chapter-nav__dot"></span><span data-t="navNight">moonlight</span></a>
+  </nav>
+
+  <main>
+    <!-- DAY: keep the original typewriter entrance and Snoopy flight motif -->
+    <section class="scene scene--hero phase-day" id="welcome" data-phase="day">
+      <img class="scene-cloud cloud-a" src="img/i81.webp" alt="" aria-hidden="true">
+      <img class="scene-cloud cloud-b" src="img/i81.webp" alt="" aria-hidden="true">
+      <img class="decor decor--hero-flower" src="img/i82.webp" alt="" aria-hidden="true">
+      <img class="decor decor--hero-flower-r" src="img/i47.webp" alt="" aria-hidden="true">
+      <div class="hero-sun" aria-hidden="true"></div>
+      <div class="hero-copy reveal visible">
+        <p class="eyebrow pill-eyebrow"><span class="mini-sparkle">✦</span> <span data-t="heroEyebrow">a little piece of my heart, for you</span> <span class="mini-sparkle">✦</span></p>
+        <h1 id="hero-title" aria-label="Happy Birthday, my sweetheart"><span id="hero-typewriter" class="typewriter"></span><span class="type-caret" aria-hidden="true">|</span></h1>
+        <p class="hero-subtitle" data-t="heroSubtitle">Today a beautiful little doll was born—the one who is my whole world, my sweet wife.</p>
+        <a href="#garden" class="button button--primary button--wide" data-t="startJourney">Open your little surprise <span aria-hidden="true">↗</span></a>
+        <p class="scroll-cue" data-t="scrollCue">Scroll slowly, my love</p>
+      </div>
+      <div class="hero-flight" aria-hidden="true"><span class="flight-ring flight-ring-1"></span><span class="flight-ring flight-ring-2"></span><img src="img/i77.webp" alt=""></div>
+      <img class="hero-butterfly" src="img/i50.webp" alt="" aria-hidden="true">
+      <div class="hero-stickers" aria-hidden="true">
+        <img class="hero-sticker hero-sticker--spider-hang" src="img/i15.webp" alt="">
+        <img class="hero-sticker hero-sticker--spider-love" src="img/i14.webp" alt="">
+      </div>
+    </section>
+
+    <!-- DAY: garden and photo memories -->
+    <section class="scene scene--garden phase-day" id="garden" data-phase="day">
+      <img class="decor decor--left-top" src="img/i68.webp" alt="" aria-hidden="true">
+      <img class="decor decor--right-bottom" src="img/i71.webp" alt="" aria-hidden="true">
+      <img class="scattered-memory" src="personal/foto-08.jpg" alt="" aria-hidden="true">
+      <div class="scene-inner">
+        <div class="section-heading reveal">
+          <span class="chapter-index">01 / <span data-t="chapterDay">SUNLIT MOMENTS</span></span>
+          <h2 data-t="gardenTitle">A garden full of <em>us.</em></h2>
+          <p data-t="gardenIntro">Every little memory is a flower I would choose all over again.</p>
+        </div>
+        <div class="memory-layout">
+          <div class="memory-grid" id="memory-grid"></div>
+          <aside class="garden-side reveal">
+            <div class="love-ticket">
+              <div class="ticket-top"><span data-t="ticketAdmit">ADMIT ONE</span><span>✷ 01</span></div>
+              <div class="ticket-stamp">♡</div>
+              <p data-t="ticketTitle">a lifetime of little adventures</p>
+              <div class="ticket-bottom"><span data-t="ticketValid">VALID FOREVER</span><span>∞</span></div>
+            </div>
+            <button class="flower-touch" type="button" data-flower-button aria-label="Make flowers bloom"><img src="img/i45.webp" alt="" aria-hidden="true"><span data-t="flowerButton">tap the flower for a little magic</span></button>
+            <div class="sticker-tray reveal" aria-hidden="true">
+              <img src="img/i14.webp" alt="">
+              <img src="img/i26.webp" alt="">
+            </div>
+          </aside>
+        </div>
+          <div class="extra-memory-album reveal" id="extra-memory-album">
+            <div class="memory-album-heading"><span aria-hidden="true">♡ ✦ ♡</span><p data-t="extraMemories">Little pieces of our story</p></div>
+            <div class="memory-album-photos">
+              <img src="personal/foto-02.jpg" alt="A moment together" loading="lazy">
+              <img src="personal/foto-10.jpg" alt="A little memory" loading="lazy">
+              <img src="personal/foto-16.jpg" alt="A childhood memory" loading="lazy">
+              <img src="personal/foto-15.jpg" alt="A sweet memory" loading="lazy">
+            </div>
+            <div class="memory-album-media" aria-label="Romantic video memories">
+              <div class="memory-movie" id="memory-cinema-1">
+                <div class="memory-movie__heading"><span>01 · <span data-t="memoryFilmOne">A little moment of us</span></span><span aria-hidden="true">♡</span></div>
+                <video src="video/recuerdo-horizontal-1.mp4" poster="personal/foto-00.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="A little moment of us"></video>
+                <button class="memory-movie__fullscreen" type="button" data-fullscreen-video="1" data-t="videoFullscreen">View full screen ↗</button>
+              </div>
+              <div class="memory-movie" id="memory-cinema-2">
+                <div class="memory-movie__heading"><span>02 · <span data-t="memoryFilmTwo">A moment with our song</span></span><span aria-hidden="true">✧</span></div>
+                <video src="video/recuerdo-horizontal-2.mp4" poster="personal/foto-01.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="A special little video with music"></video>
+                <button class="memory-movie__fullscreen" type="button" data-fullscreen-video="2" data-t="videoFullscreen">View full screen ↗</button>
+              </div>
+              <div class="memory-song"><img src="personal/foto-07.jpg" alt="Our song keepsake" loading="lazy"><span data-t="songCaption">Our little song ♡</span></div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- DAY: letters -->
+    <section class="scene scene--letters phase-day" id="day-letters" data-phase="day">
+      <img class="decor decor--left-top decor--large" src="img/i70.webp" alt="" aria-hidden="true">
+      <img class="decor decor--right-bottom" src="img/i48.webp" alt="" aria-hidden="true">
+      <div class="scene-inner centered">
+        <div class="section-heading reveal">
+          <span class="chapter-index">02 / <span data-t="chapterLetters">SEALED WITH LOVE</span></span>
+          <h2 data-t="dayLettersTitle">Letters for my <em>sunshine.</em></h2>
+          <p data-t="dayLettersDesc">Some things are easier to say when they are tucked inside a little envelope.</p>
+        </div>
+        <div id="day-envelope-list" class="envelopes"></div>
+        <p class="hand-note reveal" data-t="envelopeHint">psst… press an envelope to open it ♡</p>
+      </div>
+    </section>
+
+    <!-- SUNSET: interactive scratch-off letter revealing a real user photo once added -->
+    <section class="scene scene--scratch phase-sunset" id="sunset-secret" data-phase="sunset">
+      <img class="decor decor--right-top" src="img/i75.webp" alt="" aria-hidden="true">
+      <img class="decor decor--left-bottom" src="img/i46.webp" alt="" aria-hidden="true">
+      <div class="scene-inner scratch-layout">
+        <div class="section-heading section-heading--left reveal">
+          <span class="chapter-index">03 / <span data-t="chapterGolden">THE GOLDEN HOUR</span></span>
+          <h2 data-t="scratchTitle">A secret beneath <em>the words.</em></h2>
+          <p data-t="scratchDesc">I wrote you a little letter. Gently rub it away to uncover the moment hiding underneath.</p>
+          <div class="scratch-instructions"><span class="scratch-hand">✍</span><span data-t="scratchHint">Hold &amp; swipe to scratch • works with your finger too</span></div>
+          <div class="scratch-controls">
+            <span id="scratch-progress" aria-live="polite">0%</span>
+            <button class="text-button" id="reveal-photo-btn" type="button" data-t="revealPhoto">Reveal the photo ↗</button>
+            <button class="text-button" id="scratch-reset-btn" type="button" data-t="scratchAgain">Try again ↺</button>
+          </div>
+        </div>
+        <div class="scratch-frame reveal" id="scratch-frame">
+          <div class="scratch-photo" id="scratch-photo">
+            <img class="user-photo scratch-photo-image" src="personal/foto-03.jpg" alt="A special memory of us" data-photo-key="reveal">
+            <div class="photo-fallback photo-fallback--scratch"><img src="img/i18.webp" alt=""><span data-t="photoPlaceholder">Our favorite photo belongs here ♡</span></div>
+            <span class="photo-frame-label" data-t="scratchFound">my favorite view has always been us ♡</span>
+          </div>
+          <canvas id="scratch-canvas" aria-label="Scratch the love letter to reveal a photo"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUNSET: actual sunset asset used as a framed landscape accent; not stretched -->
+    <section class="scene scene--sunset phase-sunset" id="sunset-letter" data-phase="sunset">
+      <img class="decor decor--left-bottom" src="img/i82.webp" alt="" aria-hidden="true">
+      <div class="scene-inner sunset-layout">
+        <div class="sunset-visual reveal">
+          <div class="sunset-aura"></div>
+          <div class="sunset-art sunset-art--photo-only"><img class="sunset-main-photo" src="personal/foto-01.jpg" alt="A favorite photo of us together" loading="lazy"></div>
+          <img class="sunset-butterfly" src="img/i50.webp" alt="" aria-hidden="true">
+          <img class="sunset-spider" src="img/i27.webp" alt="" aria-hidden="true">
+        </div>
+        <div class="sunset-words reveal">
+          <span class="chapter-index">04 / <span data-t="chapterSunset">A LITTLE MORE LOVE</span></span>
+          <h2 data-t="sunsetTitle">If I could pause <em>the sky…</em></h2>
+          <p data-t="sunsetDesc">…I would choose the moments when everything glows, just like my world does when you smile.</p>
+          <div id="sunset-envelope-list" class="envelopes envelopes--small"></div>
+          <span class="sunset-note">✦ <span data-t="sunsetNote">one more letter before the stars</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUNSET: memory locks / Snoopy reactions -->
+    <section class="scene scene--locks phase-sunset" id="memory-locks" data-phase="sunset">
+      <img class="decor decor--right-top" src="img/i69.webp" alt="" aria-hidden="true">
+      <img class="decor decor--left-bottom" src="img/i51.webp" alt="" aria-hidden="true">
+      <div class="scene-inner centered">
+        <div class="section-heading reveal">
+          <span class="chapter-index">05 / <span data-t="chapterUnlock">ONLY WE KNOW</span></span>
+          <h2 data-t="locksTitle">The keys to <em>our story.</em></h2>
+          <p data-t="locksIntro">Three little locks. Three memories that only you and I understand.</p>
+        </div>
+        <div class="locks-progress"><span data-t="locksUnlocked">UNLOCKED</span> <strong id="locks-count">0 / 3</strong></div>
+        <div class="locks-grid" id="locks-grid"></div>
+        <div class="locks-finale" id="locks-finale" hidden><img src="img/i41.webp" alt="Snoopy celebrating"><p data-t="locksComplete">You know all the little pieces of my heart. ♡</p></div>
+      </div>
+    </section>
+
+    <!-- NIGHT: interactive moon and night letters -->
+    <section class="scene scene--moon phase-night" id="moonlight" data-phase="night">
+      <img class="decor decor--left-bottom" src="img/i68.webp" alt="" aria-hidden="true">
+      <div class="scene-inner moon-layout">
+        <div class="moon-display reveal">
+          <span class="orbit orbit--one"></span><span class="orbit orbit--two"></span>
+          <button class="moon-toggle" type="button" id="moon-toggle" aria-label="Touch the moon to change its color" aria-pressed="false">
+            <img class="moon-natural" src="prepared/moon-silver.webp" alt="Soft full moon">
+            <img class="moon-red" src="prepared/moon-red.webp" alt="Red full moon">
+          </button>
+          <span class="moon-star moon-star-1">✦</span><span class="moon-star moon-star-2">✧</span><span class="moon-star moon-star-3">✷</span>
+          <p class="moon-hint" data-t="moonHint">psst… touch the moon ☾</p>
+        </div>
+        <div class="moon-content reveal">
+          <span class="chapter-index">06 / <span data-t="chapterMoon">UNDER OUR SKY</span></span>
+          <h2 data-t="moonTitle">The moon knows <em>my secret.</em></h2>
+          <p data-t="moonDesc">Even when the world goes quiet, my favorite thought is still you.</p>
+          <p class="moon-whisper" id="moon-whisper" aria-live="polite" data-t="moonWhisper">Some wishes are written in the stars.</p>
+          <div id="night-envelope-list" class="envelopes envelopes--night"></div>
+        </div>
+      </div>
+      <img class="night-snoopy" src="img/i62.webp" alt="" aria-hidden="true">
+      <img class="night-spider" src="img/i15.webp" alt="" aria-hidden="true">
+    </section>
+
+    <!-- NIGHT: candle -> cake choice -> one cake, bite-by-bite -> Snoopy -->
+    <section class="scene scene--cake phase-night" id="birthday-cake" data-phase="night">
+      <img class="decor decor--left-top" src="img/i07.webp" alt="" aria-hidden="true">
+      <img class="decor decor--right-bottom" src="img/i70.webp" alt="" aria-hidden="true">
+      <div class="scene-inner centered">
+        <div class="section-heading reveal">
+          <span class="chapter-index">07 / <span data-t="chapterWish">MAKE A WISH</span></span>
+          <h2 data-t="cakeTitle">One wish, <em>three sweet choices.</em></h2>
+          <p data-t="cakeIntro">I know we cannot eat cake together today, but this cake is my gift to you.</p>
+        </div>
+        <div class="cake-experience reveal" id="cake-experience" aria-live="polite">
+          <div class="cake-sheen"></div>
+          <div class="cake-stage is-current" id="cake-candles-stage">
+            <h3 data-t="candleTitle">Close your eyes. Make a wish. ♡</h3>
+            <button class="candles-button" type="button" id="blow-candles" aria-label="Blow out the birthday candles">
+              <span class="candle-glow"></span>
+              <img src="img/i76.webp" alt="Birthday candles with glowing flames">
+              <span class="smoke smoke--1"></span><span class="smoke smoke--2"></span><span class="smoke smoke--3"></span>
+            </button>
+            <p class="cake-helper" data-t="candleHint">tap the candles to blow them out</p>
+            <button type="button" id="blow-candles-alt" class="button button--cream" data-t="blowButton">Blow the candles ✨</button>
+          </div>
+          <div class="cake-stage" id="cake-choice-stage" hidden>
+            <p class="cake-kicker" data-t="choiceKicker">YOUR WISH IS ON ITS WAY</p>
+            <h3 data-t="choiceTitle">Now, choose your birthday cake!</h3>
+            <p class="cake-helper" data-t="choiceHint">Pick your favorite. Only one cake will be served.</p>
+            <div class="cake-choices" id="cake-choices"></div>
+          </div>
+          <div class="cake-stage" id="cake-eating-stage" hidden>
+            <p class="cake-kicker" data-t="eatKicker">MADE ESPECIALLY FOR YOU</p>
+            <h3 data-t="eatTitle">One little bite at a time…</h3>
+            <button class="cake-main-button" type="button" id="eat-cake" aria-label="Take a bite of cake"><img id="active-cake-image" src="img/i59.webp" alt="A delicious birthday cake"><span class="bite-spark bite-spark--one">✧</span><span class="bite-spark bite-spark--two">♡</span></button>
+            <div class="cake-eating-footer"><p class="cake-helper" id="cake-bite-message" data-t="biteHint">tap the cake to take a bite 🍰</p><div class="bite-progress" aria-label="Cake progress"><span></span><span></span><span></span><span></span></div></div>
+          </div>
+          <div class="cake-stage" id="cake-finish-stage" hidden>
+            <div class="celebration-art"><img class="celebration-snoopy" src="img/i41.webp" alt="Snoopy celebrating with balloons"><img class="celebration-balloons" src="img/i67.webp" alt="" aria-hidden="true"></div>
+            <p class="cake-kicker" data-t="finishKicker">YOUR WISH HAS BEEN HEARD</p>
+            <h3 data-t="finishTitle">The sweetest part was always you. ♡</h3>
+            <p class="cake-helper" data-t="finishDesc">I hope all your wishes come true, my love.</p>
+            <button type="button" class="button button--cream" id="cake-replay" data-t="cakeReplay">Make another wish ↻</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL-SCREEN LOOP VIDEO: separate scene, without altering the original chapters -->
+    <section class="scene scene--cinematic-video phase-night" id="cinematic-memory" data-phase="night" aria-label="A special moment for us">
+      <video class="cinematic-video__media" src="video/batman-catwoman-dancing.mp4" poster="video/batman-catwoman-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Animated romantic rooftop dance"></video>
+      <div class="cinematic-video__shade" aria-hidden="true"></div>
+      <img class="cinematic-video__bouquet" src="img/i30.webp" alt="" aria-hidden="true">
+      <div class="cinematic-video__caption">
+        <p class="cinematic-video__eyebrow" aria-hidden="true">♡ &nbsp; ✦ &nbsp; ♡</p>
+        <h2 class="cinematic-video__title">
+          <span class="cinematic-video__en">In every universe,<br><em>I'd choose you.</em></span>
+          <span class="cinematic-video__es">En cada universo,<br><em>te elegiría a ti.</em></span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- LAST PAGE -->
+    <section class="scene scene--final phase-night" id="forever" data-phase="night">
+      <img class="decor decor--left-top" src="img/i00.webp" alt="" aria-hidden="true">
+      <div class="final-card reveal">
+        <img class="final-card__bouquet" src="img/i69.webp" alt="" aria-hidden="true">
+        <div class="final-sparkles" aria-hidden="true">✦ &nbsp; ♡ &nbsp; ✦</div>
+        <span class="chapter-index">08 / <span data-t="chapterAlways">EVERY DAY, ALWAYS</span></span>
+        <h2 data-t="finalTitle">You are the brightest star. <em>I love you more every day.</em></h2>
+        <div class="final-photo-wrap"><img class="final-photo user-photo" src="personal/foto-04.jpg" alt="Our special photograph" data-photo-key="finale"><div class="photo-fallback photo-fallback--final"><img src="img/i18.webp" alt=""><span data-t="photoPlaceholder">Our favorite photo belongs here ♡</span></div></div>
+        <p class="final-message" id="final-message"></p>
+        <p class="final-signature" data-t="finalSignature">With all my love, today and always.</p>
+        <div class="final-charms" aria-hidden="true"><img src="img/i14.webp" alt=""><img src="img/i03.webp" alt=""><img src="img/i27.webp" alt=""></div>
+        <img class="final-snoopy" src="img/i05.webp" alt="Snoopy holding flowers">
+        <button class="button button--outline" id="back-to-top" type="button" data-t="startOver">Relive our little story ↥</button>
+      </div>
+
+    </section>
+  </main>
+
+  <dialog id="letter-dialog" class="letter-dialog" aria-labelledby="dialog-title">
+    <div class="letter-sheet">
+      <button type="button" class="dialog-close" id="close-letter" aria-label="Close letter">×</button>
+      <span class="letter-icon">✉</span>
+      <span class="letter-overline" data-t="dearYou">A NOTE FOR YOU</span>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-body"></p>
+      <div class="dialog-signature" data-t="letterSign">with love, always ♡</div>
+      <img id="dialog-sticker" src="img/i06.webp" alt="" aria-hidden="true">
+    </div>
+  </dialog>
+  <dialog id="photo-dialog" class="photo-dialog" aria-label="Memory photograph">
+    <button type="button" id="close-photo" class="photo-dialog-close" aria-label="Close photo">×</button>
+    <img id="photo-dialog-image" src="img/i18.webp" alt="Memory photograph">
+    <p id="photo-dialog-caption"></p>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
