@@ -1,0 +1,51 @@
+name: Install and publish birthday website
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: birthday-bootstrap
+  cancel-in-progress: false
+
+jobs:
+  install-and-publish:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and validate birthday site
+        shell: bash
+        run: |
+          curl -fL --retry 3 --connect-timeout 20 'https://d2ol7oe51mr4n9.cloudfront.net/user_3KM1i68WzoMycIhLcUohelMr8hL/37f42642-1527-4905-ae1b-cec4614bf5d6.zip' -o /tmp/birthday-site.zip
+          echo 'd04f37170717eb917897f248db1f74b6b3d341f142482d192a5f64e8053b1b85  /tmp/birthday-site.zip' | sha256sum -c -
+          unzip -oq /tmp/birthday-site.zip -d .
+          test -s index.html
+          test -s config.js
+          test -s video/batman-catwoman-dancing.mp4
+      - name: Commit all website files
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add interactive birthday site and personal media'
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
